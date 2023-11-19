@@ -79,8 +79,14 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="Txt1">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Txt1KeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="Txt2">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Txt2KeyTyped"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

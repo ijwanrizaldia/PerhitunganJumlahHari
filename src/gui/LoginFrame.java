@@ -47,6 +47,18 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
+        Txt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Txt1KeyTyped(evt);
+            }
+        });
+
+        Txt2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Txt2KeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,6 +113,44 @@ public class LoginFrame extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_BtnLoginActionPerformed
+
+    private void Txt2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt2KeyTyped
+        char keyChar = evt.getKeyChar();
+
+    // Pindahkan fokus ke tombol Login jika tombol "Enter" ditekan
+    if (keyChar == '\n') {
+        performAuthentication();
+    }
+}
+
+private void performAuthentication() {
+    if ((Txt1.getText().equals("admin")) &&
+            (String.valueOf(Txt2.getPassword()).equals("admin"))) {
+        new PenentuJumlahHari().setVisible(true);
+        dispose();
+        } else {
+        JOptionPane.showMessageDialog(
+                null,
+                Txt1.getText() + ", Password Anda Salah ",
+                "Pesan Kesalahan",
+                JOptionPane.ERROR_MESSAGE);
+        Txt1.setText("");
+        Txt2.setText("");
+        Txt1.requestFocus();
+        }
+    }//GEN-LAST:event_Txt2KeyTyped
+
+    private void Txt1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt1KeyTyped
+        char keyChar = evt.getKeyChar();
+
+        
+        if (!Character.isLetter(keyChar)) {
+        evt.consume();
+        }
+        if (evt.getKeyChar() == '\n') {
+        Txt2.requestFocus();
+        }
+    }//GEN-LAST:event_Txt1KeyTyped
 
     /**
      * @param args the command line arguments
