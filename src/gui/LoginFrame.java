@@ -117,8 +117,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private void Txt2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt2KeyTyped
         char keyChar = evt.getKeyChar();
 
-    // Pindahkan fokus ke tombol Login jika tombol "Enter" ditekan
-    if (keyChar == '\n') {
+        if (keyChar == '\n') {
         performAuthentication();
     }
 }
